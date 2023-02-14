@@ -7,7 +7,7 @@ require('dotenv').config();
 
 (async () => {
   try {
-    await mongoose.connect(process.env.MONGODB);
+    await mongoose.connect(`${process.env.MONGODB}`);
     serverService.server.listen(process.env.PORT || PORT, function () {
       console.log('Сервер ожидает подключения...');
     })
